@@ -1,10 +1,15 @@
+# Node Modules
 */node_modules
+
+# Auto-Generated Files
 */autooperations
 */package-lock.json
-*/.env
-*.env
 */init-db.sh
 shared-data
 db
+frontend/src/APIHandler.js
+
+# User Specific Files
+*/.env
+*.env
 .vscode
-*/APIHandler.js

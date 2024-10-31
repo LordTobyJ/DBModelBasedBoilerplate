@@ -27,3 +27,9 @@ The system is built to generate the following on each deploy, for each model pre
 * An Upsert Frontend Function
 * A Delete Frontend Function
 
+## ENV File
+```
+POSTGRES_USER=(Your User)
+POSTGRES_PASSWORD=(Your Password)
+POSTGRES_DB=(Your DB Name)
+```
