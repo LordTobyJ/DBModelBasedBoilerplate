@@ -8,8 +8,11 @@
 
 ## Stack Infrastructure
 API: Express API
+
 Frontend: Vite React
+
 Proxy: NGINX
+
 DB: Postgres
 
 ## Creating Models
