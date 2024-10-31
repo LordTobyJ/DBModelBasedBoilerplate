@@ -1,0 +1,10 @@
+*/node_modules
+*/autooperations
+*/package-lock.json
+*/.env
+*.env
+*/init-db.sh
+shared-data
+db
+.vscode
+*/APIHandler.js
