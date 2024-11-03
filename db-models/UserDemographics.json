@@ -1,0 +1,4 @@
+{
+  "user_demo_id": ["UUID", "PRIMARY KEY", "DEFAULT gen_random_uuid()"],
+  "demographic_name": ["TEXT"]
+}

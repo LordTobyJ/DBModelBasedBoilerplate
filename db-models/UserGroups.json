@@ -1,0 +1,4 @@
+{
+  "user_group_id": ["UUID", "PRIMARY KEY", "DEFAULT gen_random_uuid()"],
+  "group_name": ["TEXT"]
+}

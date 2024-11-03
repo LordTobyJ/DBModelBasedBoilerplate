@@ -30,6 +30,46 @@ The system is built to generate the following on each deploy, for each model pre
 * An Upsert Frontend Function
 * A Delete Frontend Function
 
+#### Model Format
+Models are a json formatted list of SQL keywords, with a table name ALWAYS corresponding to the file name.
+
+ The first item is recommended to be the Primary Key, which should be a UUID ( but is not strictly required to be a UUID ).
+
+A standard Primary Key for a users table would be:
+```
+{
+  "user_id": ["UUID", "PRIMARY KEY", "DEFAULT gen_random_uuid()"],
+}
+```
+
+`gen_random_uuid()` comes from the pgcrypto extension which is included in the package by default.
+
+Currently the general format expectation of the keywords is:
+```
+{
+  <column_name>: [<sql_type>, [...<sql_keywords>]]
+}
+```
+
+More specifically, the generators use the sql keywords to make deductions about your needs. Most notably using Foreign Key Constraints, which require special formats, as so:
+
+```
+{
+  <column_name>: ["<sql_type>", "FOREIGN KEY", "<modelName>", "(<key_restraint>)"]
+}
+```
+
+Take note of the curly brackets in the key_restraint field, as these are both necessary and expected.
+
+As such, an example foreign key would be:
+
+```
+{
+  user_group: ["UUID", "FOREIGN KEY", "UserGroups", "(user_group_id)"]
+}
+```
+
+
 ## ENV File
 ```
 POSTGRES_USER=(Your User)

@@ -17,7 +17,7 @@ mkdir %0\..\api\autooperations\GET
 mkdir %0\..\api\autooperations\POST
 mkdir %0\..\api\autooperations\PUT
 
-node compile-models.js
+node %0\..\compile-models.js
 
 npm run --prefix frontend installation && ^
 npm run --prefix frontend build && ^
