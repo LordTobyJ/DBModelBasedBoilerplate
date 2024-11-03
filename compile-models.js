@@ -144,7 +144,7 @@ module.exports = Delete${tableName};
 
 const Get${tableName}ById = async (req, res) => {
   const dbClient = req.dbClient;
-  const body = req.body;
+  const body = req.query;
   try {
     const ${primaryKey[0]} = body["${primaryKey[0]}"];
     await dbClient.query(
