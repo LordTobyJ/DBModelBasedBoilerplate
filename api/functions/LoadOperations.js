@@ -13,6 +13,7 @@ const LoadOperations = async (app) => {
     const nonDbFolder = path.join(__dirname, '..', 'operations', method);
     // Open the operations with a DB Connection
     await fs.readdir(dbFolder, (err, files) => {
+      if (!files) return;
       for(let f = 0; f < files.length; f++) {
         const file = files[f]
         if (!file.endsWith('.js')) return;
@@ -24,6 +25,7 @@ const LoadOperations = async (app) => {
   
     // Open the operations without a DB Connection
     await fs.readdir(nonDbFolder, (err, files) => {
+      if (!files) return;
       for(let f = 0; f < files.length; f++) {
         const file = files[f]
         if (!file.endsWith('.js')) return;

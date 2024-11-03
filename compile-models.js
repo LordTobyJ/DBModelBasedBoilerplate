@@ -51,7 +51,7 @@ fs.readdir(modelsFolder, (err, files) => {
     fs.appendFileSync("db/init-db.sh", `);"`);
 
     const tableName = file.replace(".json","");
-    const primaryKey = data.reduce((json) => json.filter((col) => col[1].includes("PRIMARY KEY") ? col : []));
+    const primaryKey = data.reduce((json) => json.filter((col) => col[1] && col[1].includes("PRIMARY KEY") ? col : []));
     const columnNames = data.map((json) => json[0]).filter((col) => col !== primaryKey[0]); 
 
     // Add GET Endpoint
